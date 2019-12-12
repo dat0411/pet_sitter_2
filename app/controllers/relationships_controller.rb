@@ -45,7 +45,7 @@ class RelationshipsController < ApplicationController
   def update_row
     @relationship = Relationship.find(params.fetch("id_to_modify"))
 
-    @relationship.home_owner_id = params.fetch("home_owner_id")
+    
     @relationship.sitter_id = params.fetch("sitter_id")
     @relationship.start_date = params.fetch("start_date")
     @relationship.end_date = params.fetch("end_date")
