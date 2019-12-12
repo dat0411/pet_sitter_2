@@ -1,4 +1,6 @@
 ActiveAdmin.register Task do
+
+ permit_params :name, :description, :finished, :deadline, :relationship_id
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
