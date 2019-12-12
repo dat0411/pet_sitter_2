@@ -48,7 +48,7 @@ class PetsController < ApplicationController
     @pet.category = params.fetch("category")
     @pet.note = params.fetch("note")
     @pet.photo = params.fetch("photo") if params.key?("photo")
-    @pet.owner_id = params.fetch("owner_id")
+    
 
     if @pet.valid?
       @pet.save
