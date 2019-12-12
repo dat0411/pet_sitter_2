@@ -57,6 +57,22 @@ class RelationshipsController < ApplicationController
     end
   end
 
+  def destroy_row_from_home_owner
+    @relationship = Relationship.find(params.fetch("id_to_remove"))
+
+    @relationship.destroy
+
+    redirect_to("/users/#{@relationship.home_owner_id}", notice: "Relationship deleted successfully.")
+  end
+
+  def destroy_row_from_sitter
+    @relationship = Relationship.find(params.fetch("id_to_remove"))
+
+    @relationship.destroy
+
+    redirect_to("/users/#{@relationship.sitter_id}", notice: "Relationship deleted successfully.")
+  end
+
   def destroy_row
     @relationship = Relationship.find(params.fetch("id_to_remove"))
 

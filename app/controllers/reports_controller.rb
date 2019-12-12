@@ -57,6 +57,14 @@ class ReportsController < ApplicationController
     end
   end
 
+  def destroy_row_from_relationship
+    @report = Report.find(params.fetch("id_to_remove"))
+
+    @report.destroy
+
+    redirect_to("/relationships/#{@report.relationship_id}", notice: "Report deleted successfully.")
+  end
+
   def destroy_row
     @report = Report.find(params.fetch("id_to_remove"))
 

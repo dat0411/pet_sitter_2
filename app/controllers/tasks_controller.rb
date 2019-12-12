@@ -59,6 +59,14 @@ class TasksController < ApplicationController
     end
   end
 
+  def destroy_row_from_relationship
+    @task = Task.find(params.fetch("id_to_remove"))
+
+    @task.destroy
+
+    redirect_to("/relationships/#{@task.relationship_id}", notice: "Task deleted successfully.")
+  end
+
   def destroy_row
     @task = Task.find(params.fetch("id_to_remove"))
 
