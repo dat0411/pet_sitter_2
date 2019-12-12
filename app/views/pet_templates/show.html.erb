@@ -13,17 +13,21 @@
 
       <!-- Edit link pet start -->
       <div class="col">
-        <a href="/pets/<%= @pet.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit pet
-        </a>
+        <% if current_user == @pet.owner %>
+          <a href="/pets/<%= @pet.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit pet
+          </a>
+        <% end %>
       </div>
       <!-- Edit link pet end -->
 
       <!-- Delete link pet start -->
       <div class="col">
-        <a href="/delete_pet/<%= @pet.id %>" class="btn btn-block btn-outline-secondary">
-          Delete pet
-        </a>
+        <% if current_user == @pet.owner %>
+          <a href="/delete_pet/<%= @pet.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete pet
+          </a>
+        <% end %>
       </div>
       <!-- Delete link pet end -->
     </div>

@@ -1,4 +1,14 @@
 class PetsController < ApplicationController
+  before_action :current_user_must_be_pet_owner, :only => [:edit_form, :update_row, :destroy_row]
+
+  def current_user_must_be_pet_owner
+    pet = Pet.find(params["id_to_display"] || params["prefill_with_id"] || params["id_to_modify"] || params["id_to_remove"])
+
+    unless current_user == pet.owner
+      redirect_to :back, :alert => "You are not authorized for that."
+    end
+  end
+
   def index
     @pets = Pet.all
 
