@@ -1,6 +1,9 @@
 class Relationship < ApplicationRecord
   # Direct associations
 
+  has_many   :tasks,
+             :dependent => :destroy
+
   belongs_to :sitter,
              :class_name => "User",
              :counter_cache => :sitter_stat_count
