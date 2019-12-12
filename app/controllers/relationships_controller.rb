@@ -10,7 +10,7 @@ class RelationshipsController < ApplicationController
   end
 
   def index
-    @relationships = Relationship.all
+    @relationships = current_user.home_owner_stat.page(params[:page]).per(10)
 
     render("relationship_templates/index.html.erb")
   end
