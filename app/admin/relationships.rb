@@ -1,4 +1,6 @@
 ActiveAdmin.register Relationship do
+
+ permit_params :home_owner_id, :sitter_id, :start_date, :end_date
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
