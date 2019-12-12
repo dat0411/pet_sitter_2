@@ -71,7 +71,7 @@
     </label>
 
     <!-- Input for relationship_id start -->
-    <input type="text" id="relationship_id" name="relationship_id" class="form-control" value="<%= @task.relationship_id %>">
+    <%= select_tag(:relationship_id, options_from_collection_for_select(Relationship.all, :id, :home_owner_id, @task.relationship_id), :class => "form-control") %>
     <!-- Input for relationship_id end -->
   </div>
   <!-- Label and input for relationship_id end -->
