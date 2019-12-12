@@ -5,4 +5,6 @@ class Relationship < ApplicationRecord
 
   # Validations
 
+  validates :start_date, :presence => true
+
 end
