@@ -13,17 +13,21 @@
 
       <!-- Edit link relationship start -->
       <div class="col">
-        <a href="/relationships/<%= @relationship.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit relationship
-        </a>
+        <% if current_user == @relationship.home_owner %>
+          <a href="/relationships/<%= @relationship.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit relationship
+          </a>
+        <% end %>
       </div>
       <!-- Edit link relationship end -->
 
       <!-- Delete link relationship start -->
       <div class="col">
-        <a href="/delete_relationship/<%= @relationship.id %>" class="btn btn-block btn-outline-secondary">
-          Delete relationship
-        </a>
+        <% if current_user == @relationship.home_owner %>
+          <a href="/delete_relationship/<%= @relationship.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete relationship
+          </a>
+        <% end %>
       </div>
       <!-- Delete link relationship end -->
     </div>
