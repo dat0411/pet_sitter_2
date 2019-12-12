@@ -1,0 +1,100 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Pet #<%= @pet.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/pets" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link pet start -->
+      <div class="col">
+        <a href="/pets/<%= @pet.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit pet
+        </a>
+      </div>
+      <!-- Edit link pet end -->
+
+      <!-- Delete link pet start -->
+      <div class="col">
+        <a href="/delete_pet/<%= @pet.id %>" class="btn btn-block btn-outline-secondary">
+          Delete pet
+        </a>
+      </div>
+      <!-- Delete link pet end -->
+    </div>
+
+    <dl>
+      <dt>
+        Name
+      </dt>
+      <!-- Display name start -->
+      <dd>
+        <%= @pet.name %>
+      </dd>
+      <!-- Display name end -->
+
+      <dt>
+        Category
+      </dt>
+      <!-- Display category start -->
+      <dd>
+        <%= @pet.category %>
+      </dd>
+      <!-- Display category end -->
+
+      <dt>
+        Note
+      </dt>
+      <!-- Display note start -->
+      <dd>
+        <%= @pet.note %>
+      </dd>
+      <!-- Display note end -->
+
+      <dt>
+        Photo
+      </dt>
+      <!-- Display photo start -->
+      <dd>
+        <%= @pet.photo %>
+      </dd>
+      <!-- Display photo end -->
+
+      <dt>
+        Owner
+      </dt>
+      <!-- Display owner_id start -->
+      <dd>
+        <%= @pet.owner_id %>
+      </dd>
+      <!-- Display owner_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@pet.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@pet.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

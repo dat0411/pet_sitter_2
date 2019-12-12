@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Pet resource:
+
+  # CREATE
+  get("/pets/new", { :controller => "pets", :action => "new_form" })
+  post("/create_pet", { :controller => "pets", :action => "create_row" })
+
+  # READ
+  get("/pets", { :controller => "pets", :action => "index" })
+  get("/pets/:id_to_display", { :controller => "pets", :action => "show" })
+
+  # UPDATE
+  get("/pets/:prefill_with_id/edit", { :controller => "pets", :action => "edit_form" })
+  post("/update_pet/:id_to_modify", { :controller => "pets", :action => "update_row" })
+
+  # DELETE
+  get("/delete_pet/:id_to_remove", { :controller => "pets", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Report resource:
 
   # CREATE
