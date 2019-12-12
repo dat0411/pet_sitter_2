@@ -12,6 +12,8 @@ RSpec.describe Relationship, type: :model do
 
     describe "Validations" do
 
+    it { should validate_presence_of(:end_date) }
+
     it { should validate_presence_of(:start_date) }
       
     end
