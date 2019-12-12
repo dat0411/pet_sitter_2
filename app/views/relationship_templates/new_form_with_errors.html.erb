@@ -27,7 +27,7 @@
     </label>
 
     <!-- Input for home_owner_id start -->
-    <input type="text" id="home_owner_id" name="home_owner_id" class="form-control" value="<%= @relationship.home_owner_id %>">
+    <%= select_tag(:home_owner_id, options_from_collection_for_select(User.all, :id, :email, @relationship.home_owner_id), :class => "form-control") %>
     <!-- Input for home_owner_id end -->
   </div>
   <!-- Label and input for home_owner_id end -->
