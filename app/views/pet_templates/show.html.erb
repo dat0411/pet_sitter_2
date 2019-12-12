@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link pet start -->
       <div class="col">
         <% if current_user == @pet.owner %>
           <a href="/pets/<%= @pet.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link pet end -->
 
-      <!-- Delete link pet start -->
       <div class="col">
         <% if current_user == @pet.owner %>
           <a href="/delete_pet/<%= @pet.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,50 +26,40 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link pet end -->
     </div>
 
     <dl>
       <dt>
         Name
       </dt>
-      <!-- Display name start -->
       <dd>
         <%= @pet.name %>
       </dd>
-      <!-- Display name end -->
 
       <dt>
         Category
       </dt>
-      <!-- Display category start -->
       <dd>
         <%= @pet.category %>
       </dd>
-      <!-- Display category end -->
 
       <dt>
         Note
       </dt>
-      <!-- Display note start -->
       <dd>
         <%= @pet.note %>
       </dd>
-      <!-- Display note end -->
 
       <dt>
         Photo
       </dt>
-      <!-- Display photo start -->
       <dd>
         <img src="<%= @pet.photo %>" class="img-fluid">
       </dd>
-      <!-- Display photo end -->
 
       <dt>
         Owner
       </dt>
-      <!-- Display owner_id start -->
       <dd>
         <% if @pet.owner.present? %>
           <a href="/users/<%= @pet.owner_id %>">
@@ -80,28 +67,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display owner_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@pet.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@pet.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

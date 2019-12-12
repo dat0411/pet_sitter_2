@@ -11,64 +11,51 @@
         </a>
       </div>
 
-      <!-- Edit link task start -->
       <div class="col">
         <a href="/tasks/<%= @task.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit task
         </a>
       </div>
-      <!-- Edit link task end -->
 
-      <!-- Delete link task start -->
       <div class="col">
         <a href="/delete_task/<%= @task.id %>" class="btn btn-block btn-outline-secondary">
           Delete task
         </a>
       </div>
-      <!-- Delete link task end -->
     </div>
 
     <dl>
       <dt>
         Name
       </dt>
-      <!-- Display name start -->
       <dd>
         <%= @task.name %>
       </dd>
-      <!-- Display name end -->
 
       <dt>
         Description
       </dt>
-      <!-- Display description start -->
       <dd>
         <%= @task.description %>
       </dd>
-      <!-- Display description end -->
 
       <dt>
         Finished
       </dt>
-      <!-- Display finished start -->
       <dd>
         <%= @task.finished %>
       </dd>
-      <!-- Display finished end -->
 
       <dt>
         Deadline
       </dt>
-      <!-- Display deadline start -->
       <dd>
         <%= @task.deadline %>
       </dd>
-      <!-- Display deadline end -->
 
       <dt>
         Relationship
       </dt>
-      <!-- Display relationship_id start -->
       <dd>
         <% if @task.relationship.present? %>
           <a href="/relationships/<%= @task.relationship_id %>">
@@ -76,28 +63,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display relationship_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@task.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@task.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

@@ -11,55 +11,44 @@
         </a>
       </div>
 
-      <!-- Edit link report start -->
       <div class="col">
         <a href="/reports/<%= @report.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit report
         </a>
       </div>
-      <!-- Edit link report end -->
 
-      <!-- Delete link report start -->
       <div class="col">
         <a href="/delete_report/<%= @report.id %>" class="btn btn-block btn-outline-secondary">
           Delete report
         </a>
       </div>
-      <!-- Delete link report end -->
     </div>
 
     <dl>
       <dt>
         Name
       </dt>
-      <!-- Display name start -->
       <dd>
         <%= @report.name %>
       </dd>
-      <!-- Display name end -->
 
       <dt>
         Description
       </dt>
-      <!-- Display description start -->
       <dd>
         <%= @report.description %>
       </dd>
-      <!-- Display description end -->
 
       <dt>
         Photo
       </dt>
-      <!-- Display photo start -->
       <dd>
         <img src="<%= @report.photo %>" class="img-fluid">
       </dd>
-      <!-- Display photo end -->
 
       <dt>
         Relationship
       </dt>
-      <!-- Display relationship_id start -->
       <dd>
         <% if @report.relationship.present? %>
           <a href="/relationships/<%= @report.relationship_id %>">
@@ -67,28 +56,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display relationship_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@report.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@report.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

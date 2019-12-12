@@ -10,11 +10,9 @@
   <ul class="list-group list-group-flush">
     <% @user.sitter_stat.each do |relationship| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/relationships/<%= relationship.id %>">
           <%= relationship.home_owner_id %>
         </a>
-        <!-- Show link end -->
 
       </li>
     <% end %>

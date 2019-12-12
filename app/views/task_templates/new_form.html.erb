@@ -5,68 +5,47 @@
 
 <hr>
 
-<!-- Form task start -->
 <form action="/create_task" method="post">
-<!-- Form task end -->
 
-  <!-- Label and input for name start -->
   <div class="form-group">
     <label for="name">
       Name
     </label>
 
-    <!-- Input for name start -->
     <input type="text" id="name" name="name" class="form-control">
-    <!-- Input for name end -->
   </div>
-  <!-- Label and input for name end -->
 
-  <!-- Label and input for description start -->
   <div class="form-group">
     <label for="description">
       Description
     </label>
 
-    <!-- Input for description start -->
     <input type="text" id="description" name="description" class="form-control">
-    <!-- Input for description end -->
   </div>
-  <!-- Label and input for description end -->
 
-  <!-- Label and input for finished start -->
   <div class="form-check">
     <input type="hidden" value="0" name="finished">
-    <!-- Input for finished start -->
     <input id="finished" class="form-check-input" name="finished" type="checkbox">
-    <!-- Input for finished end -->
     <label for="finished" class="form-check-label">
       Finished
     </label>
   </div>
 
-  <!-- Label and input for deadline start -->
   <div class="form-group">
     <label for="deadline">
       Deadline
     </label>
 
-    <!-- Input for deadline start -->
     <input type="text" id="deadline" name="deadline" class="form-control">
-    <!-- Input for deadline end -->
   </div>
-  <!-- Label and input for deadline end -->
 
-  <!-- Label and input for relationship_id start -->
   <div class="form-group">
     <label for="relationship_id">
       Relationship
     </label>
 
-    <!-- Input for relationship_id start -->
     <%= select_tag(:relationship_id, options_from_collection_for_select(Relationship.all, :id, :home_owner_id, @task.relationship_id), :class => "form-control") %>
-    <!-- Input for relationship_id end -->
   </div>
-  <!-- Label and input for relationship_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create task

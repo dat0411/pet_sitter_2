@@ -4,39 +4,25 @@
 
 <hr>
 
-<!-- Form relationship start -->
 <form action="/update_relationship/<%= @relationship.id %>" method="post">
-<!-- Form relationship end -->
 
-  <!-- Label and input for home_owner_id start -->
-  <!-- Label and input for home_owner_id end -->
 
-  <!-- Label and input for sitter_id start -->
-  <!-- Label and input for sitter_id end -->
 
-  <!-- Label and input for start_date start -->
   <div class="form-group">
     <label for="start_date">
       Start date
     </label>
 
-    <!-- Input for start_date start -->
     <input type="text" id="start_date" name="start_date" class="form-control" value="<%= @relationship.start_date %>">
-    <!-- Input for start_date end -->
   </div>
-  <!-- Label and input for start_date end -->
 
-  <!-- Label and input for end_date start -->
   <div class="form-group">
     <label for="end_date">
       End date
     </label>
 
-    <!-- Input for end_date start -->
     <input type="text" id="end_date" name="end_date" class="form-control" value="<%= @relationship.end_date %>">
-    <!-- Input for end_date end -->
   </div>
-  <!-- Label and input for end_date end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update relationship
