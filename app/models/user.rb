@@ -1,6 +1,11 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :sitter_stat,
+             :class_name => "Relationship",
+             :foreign_key => "sitter_id",
+             :dependent => :destroy
+
   has_many   :home_owner_stat,
              :class_name => "Relationship",
              :foreign_key => "home_owner_id",

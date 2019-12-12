@@ -4,6 +4,8 @@ RSpec.describe Relationship, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:sitter) }
+
     it { should belong_to(:home_owner) }
 
     end
