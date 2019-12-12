@@ -5,6 +5,8 @@ class Pet < ApplicationRecord
 
   # Validations
 
+  validates :category, :presence => true
+
   validates :name, :presence => true
 
 end
