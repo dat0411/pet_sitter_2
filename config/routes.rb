@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Report resource:
+
+  # CREATE
+  get("/reports/new", { :controller => "reports", :action => "new_form" })
+  post("/create_report", { :controller => "reports", :action => "create_row" })
+
+  # READ
+  get("/reports", { :controller => "reports", :action => "index" })
+  get("/reports/:id_to_display", { :controller => "reports", :action => "show" })
+
+  # UPDATE
+  get("/reports/:prefill_with_id/edit", { :controller => "reports", :action => "edit_form" })
+  post("/update_report/:id_to_modify", { :controller => "reports", :action => "update_row" })
+
+  # DELETE
+  get("/delete_report/:id_to_remove", { :controller => "reports", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Task resource:
 
   # CREATE

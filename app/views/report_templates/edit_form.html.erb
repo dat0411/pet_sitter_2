@@ -1,0 +1,68 @@
+<h1>
+  Edit report #<%= @report.id %>
+</h1>
+
+<hr>
+
+<!-- Form report start -->
+<form action="/update_report/<%= @report.id %>" method="post">
+<!-- Form report end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <input type="text" id="name" name="name" class="form-control" value="<%= @report.name %>">
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <!-- Label and input for description start -->
+  <div class="form-group">
+    <label for="description">
+      Description
+    </label>
+
+    <!-- Input for description start -->
+    <input type="text" id="description" name="description" class="form-control" value="<%= @report.description %>">
+    <!-- Input for description end -->
+  </div>
+  <!-- Label and input for description end -->
+
+  <!-- Label and input for photo start -->
+  <div class="form-group">
+    <label for="photo">
+      Photo
+    </label>
+
+    <!-- Input for photo start -->
+    <input type="text" id="photo" name="photo" class="form-control" value="<%= @report.photo %>">
+    <!-- Input for photo end -->
+  </div>
+  <!-- Label and input for photo end -->
+
+  <!-- Label and input for relationship_id start -->
+  <div class="form-group">
+    <label for="relationship_id">
+      Relationship
+    </label>
+
+    <!-- Input for relationship_id start -->
+    <input type="text" id="relationship_id" name="relationship_id" class="form-control" value="<%= @report.relationship_id %>">
+    <!-- Input for relationship_id end -->
+  </div>
+  <!-- Label and input for relationship_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update report
+  </button>
+</form>
+
+<hr>
+
+<a href="/reports">
+  Go back
+</a>
