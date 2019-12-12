@@ -4,6 +4,8 @@ RSpec.describe Report, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:relationship) }
+
     end
 
     describe "InDirect Associations" do

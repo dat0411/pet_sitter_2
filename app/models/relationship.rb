@@ -1,6 +1,9 @@
 class Relationship < ApplicationRecord
   # Direct associations
 
+  has_many   :reports,
+             :dependent => :destroy
+
   has_many   :tasks,
              :dependent => :destroy
 
