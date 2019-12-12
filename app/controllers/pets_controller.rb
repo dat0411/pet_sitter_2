@@ -10,7 +10,7 @@ class PetsController < ApplicationController
   end
 
   def index
-    @pets = Pet.all
+    @pets = current_user.pets.page(params[:page]).per(10)
 
     render("pet_templates/index.html.erb")
   end
