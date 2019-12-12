@@ -5,6 +5,8 @@ class Task < ApplicationRecord
 
   # Validations
 
+  validates :deadline, :presence => true
+
   validates :description, :presence => true
 
   validates :name, :presence => true
