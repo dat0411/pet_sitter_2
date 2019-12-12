@@ -1,5 +1,5 @@
 <!-- Form report start -->
-<form action="/create_report_from_relationship" method="post">
+<form action="/create_report" method="post" enctype="multipart/form-data">
 <!-- Form report end -->
 
   <!-- Label and input for name start -->
@@ -33,7 +33,7 @@
     </label>
 
     <!-- Input for photo start -->
-    <input type="text" id="photo" name="photo" class="form-control" value="<%= @report.photo %>">
+    <input type="file" id="photo" name="photo" class="form-control">
     <!-- Input for photo end -->
   </div>
   <!-- Label and input for photo end -->

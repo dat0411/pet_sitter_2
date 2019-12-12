@@ -22,7 +22,7 @@ class ReportsController < ApplicationController
 
     @report.name = params.fetch("name")
     @report.description = params.fetch("description")
-    @report.photo = params.fetch("photo")
+    @report.photo = params.fetch("photo") if params.key?("photo")
     @report.relationship_id = params.fetch("relationship_id")
 
     if @report.valid?
@@ -39,7 +39,7 @@ class ReportsController < ApplicationController
 
     @report.name = params.fetch("name")
     @report.description = params.fetch("description")
-    @report.photo = params.fetch("photo")
+    @report.photo = params.fetch("photo") if params.key?("photo")
     @report.relationship_id = params.fetch("relationship_id")
 
     if @report.valid?
@@ -62,7 +62,7 @@ class ReportsController < ApplicationController
 
     @report.name = params.fetch("name")
     @report.description = params.fetch("description")
-    @report.photo = params.fetch("photo")
+    @report.photo = params.fetch("photo") if params.key?("photo")
     @report.relationship_id = params.fetch("relationship_id")
 
     if @report.valid?

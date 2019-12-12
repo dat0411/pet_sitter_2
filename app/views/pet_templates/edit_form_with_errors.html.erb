@@ -14,7 +14,7 @@
 <hr>
 
 <!-- Form pet start -->
-<form action="/update_pet/<%= @pet.id %>" method="post">
+<form action="/update_pet/<%= @pet.id %>" method="post" enctype="multipart/form-data">
 <!-- Form pet end -->
 
   <!-- Label and input for name start -->
@@ -60,7 +60,8 @@
     </label>
 
     <!-- Input for photo start -->
-    <input type="text" id="photo" name="photo" class="form-control" value="<%= @pet.photo %>">
+    <%= cl_image_tag(@pet.photo.to_s, :width => 90, :height => 90, :crop => :thumb) %>
+    <input type="file" id="photo" name="photo" class="form-control">
     <!-- Input for photo end -->
   </div>
   <!-- Label and input for photo end -->

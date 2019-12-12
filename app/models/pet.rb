@@ -1,4 +1,6 @@
 class Pet < ApplicationRecord
+  mount_uploader :photo, PhotoUploader
+
   # Direct associations
 
   belongs_to :owner,

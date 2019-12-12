@@ -23,7 +23,7 @@ class PetsController < ApplicationController
     @pet.name = params.fetch("name")
     @pet.category = params.fetch("category")
     @pet.note = params.fetch("note")
-    @pet.photo = params.fetch("photo")
+    @pet.photo = params.fetch("photo") if params.key?("photo")
     @pet.owner_id = params.fetch("owner_id")
 
     if @pet.valid?
@@ -47,7 +47,7 @@ class PetsController < ApplicationController
     @pet.name = params.fetch("name")
     @pet.category = params.fetch("category")
     @pet.note = params.fetch("note")
-    @pet.photo = params.fetch("photo")
+    @pet.photo = params.fetch("photo") if params.key?("photo")
     @pet.owner_id = params.fetch("owner_id")
 
     if @pet.valid?
