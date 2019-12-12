@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :pets,
+             :foreign_key => "owner_id",
+             :dependent => :destroy
+
   has_many   :sitter_stat,
              :class_name => "Relationship",
              :foreign_key => "sitter_id",
