@@ -20,7 +20,8 @@ class RelationshipsController < ApplicationController
   end
 
   def index
-    @relationships = current_user.home_owner_stat.page(params[:page]).per(10)
+    @q = current_user.sitter_stat.ransack(params[:q])
+    @relationships = @q.result(:distinct => true).includes(:home_owner, :sitter, :tasks, :reports).page(params[:page]).per(10)
 
     render("relationship_templates/index.html.erb")
   end
