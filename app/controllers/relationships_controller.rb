@@ -6,6 +6,8 @@ class RelationshipsController < ApplicationController
   end
 
   def show
+    @report = Report.new
+    @task = Task.new
     @relationship = Relationship.find(params.fetch("id_to_display"))
 
     render("relationship_templates/show.html.erb")

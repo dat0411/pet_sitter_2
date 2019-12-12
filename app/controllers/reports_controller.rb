@@ -34,6 +34,23 @@ class ReportsController < ApplicationController
     end
   end
 
+  def create_row_from_relationship
+    @report = Report.new
+
+    @report.name = params.fetch("name")
+    @report.description = params.fetch("description")
+    @report.photo = params.fetch("photo")
+    @report.relationship_id = params.fetch("relationship_id")
+
+    if @report.valid?
+      @report.save
+
+      redirect_to("/relationships/#{@report.relationship_id}", notice: "Report created successfully.")
+    else
+      render("report_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @report = Report.find(params.fetch("prefill_with_id"))
 

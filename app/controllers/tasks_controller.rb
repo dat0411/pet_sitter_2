@@ -35,6 +35,24 @@ class TasksController < ApplicationController
     end
   end
 
+  def create_row_from_relationship
+    @task = Task.new
+
+    @task.name = params.fetch("name")
+    @task.description = params.fetch("description")
+    @task.finished = params.fetch("finished")
+    @task.deadline = params.fetch("deadline")
+    @task.relationship_id = params.fetch("relationship_id")
+
+    if @task.valid?
+      @task.save
+
+      redirect_to("/relationships/#{@task.relationship_id}", notice: "Task created successfully.")
+    else
+      render("task_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @task = Task.find(params.fetch("prefill_with_id"))
 
