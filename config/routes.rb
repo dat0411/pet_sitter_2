@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "relationships#index"
   # Routes for the Pet resource:
 
   # CREATE
