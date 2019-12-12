@@ -84,7 +84,11 @@
 
         <!-- Display report.relationship_id start -->
         <td>
-          <%= report.relationship.home_owner_id %>
+          <% if report.relationship.present? %>
+            <a href="/relationships/<%= report.relationship.id %>">
+              <%= report.relationship.home_owner_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display report.relationship_id end -->
 

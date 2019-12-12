@@ -94,7 +94,11 @@
 
         <!-- Display task.relationship_id start -->
         <td>
-          <%= task.relationship.home_owner_id %>
+          <% if task.relationship.present? %>
+            <a href="/relationships/<%= task.relationship.id %>">
+              <%= task.relationship.home_owner_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display task.relationship_id end -->
 

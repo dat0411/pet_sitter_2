@@ -38,7 +38,11 @@
       </dt>
       <!-- Display home_owner_id start -->
       <dd>
-        <%= @relationship.home_owner_id %>
+        <% if @relationship.home_owner.present? %>
+          <a href="/users/<%= @relationship.home_owner_id %>">
+            <%= @relationship.home_owner.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display home_owner_id end -->
 
@@ -47,7 +51,11 @@
       </dt>
       <!-- Display sitter_id start -->
       <dd>
-        <%= @relationship.sitter_id %>
+        <% if @relationship.sitter.present? %>
+          <a href="/users/<%= @relationship.sitter_id %>">
+            <%= @relationship.sitter.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display sitter_id end -->
 

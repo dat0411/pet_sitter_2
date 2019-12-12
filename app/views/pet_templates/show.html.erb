@@ -74,7 +74,11 @@
       </dt>
       <!-- Display owner_id start -->
       <dd>
-        <%= @pet.owner_id %>
+        <% if @pet.owner.present? %>
+          <a href="/users/<%= @pet.owner_id %>">
+            <%= @pet.owner.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display owner_id end -->
 

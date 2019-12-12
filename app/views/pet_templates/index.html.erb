@@ -94,7 +94,11 @@
 
         <!-- Display pet.owner_id start -->
         <td>
-          <%= pet.owner.email %>
+          <% if pet.owner.present? %>
+            <a href="/users/<%= pet.owner.id %>">
+              <%= pet.owner.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display pet.owner_id end -->
 

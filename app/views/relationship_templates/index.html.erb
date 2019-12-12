@@ -66,13 +66,21 @@
 
         <!-- Display relationship.home_owner_id start -->
         <td>
-          <%= relationship.home_owner.email %>
+          <% if relationship.home_owner.present? %>
+            <a href="/users/<%= relationship.home_owner.id %>">
+              <%= relationship.home_owner.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display relationship.home_owner_id end -->
 
         <!-- Display relationship.sitter_id start -->
         <td>
-          <%= relationship.sitter.email %>
+          <% if relationship.sitter.present? %>
+            <a href="/users/<%= relationship.sitter.id %>">
+              <%= relationship.sitter.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display relationship.sitter_id end -->
 

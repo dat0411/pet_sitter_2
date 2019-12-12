@@ -70,7 +70,11 @@
       </dt>
       <!-- Display relationship_id start -->
       <dd>
-        <%= @task.relationship_id %>
+        <% if @task.relationship.present? %>
+          <a href="/relationships/<%= @task.relationship_id %>">
+            <%= @task.relationship.home_owner_id %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display relationship_id end -->
 
