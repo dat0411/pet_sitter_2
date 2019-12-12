@@ -1,6 +1,10 @@
 class Relationship < ApplicationRecord
   # Direct associations
 
+  belongs_to :home_owner,
+             :class_name => "User",
+             :counter_cache => :home_owner_stat_count
+
   # Indirect associations
 
   # Validations
