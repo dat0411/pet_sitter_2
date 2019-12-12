@@ -27,15 +27,9 @@
   <!-- Label and input for home_owner_id end -->
 
   <!-- Label and input for sitter_id start -->
-  <div class="form-group">
-    <label for="sitter_id">
-      Sitter
-    </label>
-
-    <!-- Input for sitter_id start -->
-    <%= select_tag(:sitter_id, options_from_collection_for_select(User.all, :id, :email, @relationship.sitter_id), :class => "form-control") %>
-    <!-- Input for sitter_id end -->
-  </div>
+  <!-- Input for "sitter_id" start -->
+  <input type="hidden" name="sitter_id" value="<%= current_user.id %>">
+  <!-- Input for "sitter_id" end -->
   <!-- Label and input for sitter_id end -->
 
   <!-- Label and input for start_date start -->

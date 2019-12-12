@@ -56,7 +56,7 @@ class RelationshipsController < ApplicationController
     @relationship = Relationship.find(params.fetch("id_to_modify"))
 
     
-    @relationship.sitter_id = params.fetch("sitter_id")
+    
     @relationship.start_date = params.fetch("start_date")
     @relationship.end_date = params.fetch("end_date")
 
